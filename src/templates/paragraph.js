@@ -1,20 +1,21 @@
 //paragraph.js
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import admissionStyles from "../components/admissionparagraph.module.css";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import admissionStyles from "../components/admissionparagraph.module.css"
 
-import { getParagraph } from "../paragraphHelpers";
+import { getParagraph } from "../paragraphHelpers"
 
 const PageTemplate = ({ data }) => {
   const paragraphs = data.page.relationships.paragraphs.map(getParagraph);
 
   return (
     <Layout>
+
       <div className={admissionStyles.wrapper}>
-        <h1>{data.page.title}</h1>
+        <h1>{data.page.field_display_title}</h1>
         <p dangerouslySetInnerHTML={{ __html: data.page.body.processed }} />
-        <div>
+        <div className={admissionStyles.prices}>
           {paragraphs}
         </div>
       </div>
@@ -32,12 +33,12 @@ export const pageQuery = graphql`
               processed
             }
             relationships {
-                paragraphs: field_admission {
+              paragraphs: field_admission {
                   type: __typename
                   ...ParagraphAdmissionType
-               }
+              }
             }
-            title
+            field_display_title
         }
     }
 `;

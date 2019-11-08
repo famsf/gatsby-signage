@@ -22,6 +22,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-web-font-loader',
+      // This is causing a FOUC; we need to load this synchronously... Applied an OK workaround.
       options: {
         typekit: {
           id: 'tpb7nan',
