@@ -25,3 +25,4 @@ export const query = graphql`
     }
   }
 `;
+// Build in nullification -- Netlify didn't like it when there was NO content for this component.
