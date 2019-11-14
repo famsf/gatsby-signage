@@ -3,6 +3,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import admissionStyles from "../components/admissionparagraph.module.css"
+import Img from "gatsby-image"
 
 import { getParagraph } from "../paragraphHelpers"
 
@@ -14,7 +15,7 @@ const PageTemplate = ({ data }) => {
 
       <div className={admissionStyles.wrapper}>
         <h1>{data.page.field_display_title}</h1>
-        <p dangerouslySetInnerHTML={{ __html: data.page.body.processed }} />
+
         <div className={admissionStyles.prices}>
           {paragraphs}
         </div>
@@ -29,16 +30,15 @@ export const pageQuery = graphql`
     query($slug: String!) {
         page: nodeDigitalSignagePane(fields: { slug: { eq: $slug } }) {
             id
-            body {
-              processed
-            }
+            field_display_title
             relationships {
               paragraphs: field_admission {
                   type: __typename
                   ...ParagraphAdmissionType
+                  ...ParagraphImage
+                  ...ParagraphDescription
               }
-            }
-            field_display_title
+           }
         }
-    }
+     }
 `;

@@ -39,3 +39,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
   }
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type allNodeDigitalSignagePane implements Node {
+      field_display_title: String
+      body: String!
+    }
+  `
+  createTypes(typeDefs)
+}

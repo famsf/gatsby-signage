@@ -1,9 +1,13 @@
 // paragraphHelpers.js
-import React from "react";
-import { admissionparagraph } from "./components/admissionparagraph";
+import React from "react"
+import { admissionparagraph } from "./components/admissionparagraph"
+import { imageparagraph } from "./components/imageparagraph"
+import { descriptionparagraph } from "./components/descriptionparagraph"
 
 const components = {
     paragraph__admission_type: admissionparagraph,
+    paragraph__signage_image: imageparagraph,
+    paragraph__description: descriptionparagraph
 };
 
 export const getParagraph = node => {
