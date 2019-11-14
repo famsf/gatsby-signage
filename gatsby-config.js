@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://dev-gatsby-signage-cms.pantheonsite.io/jsonapi`,
+        baseUrl: `https://dev-gatsby-signage-cms.pantheonsite.io/`,
         apiBase: 'jsonapi',
       },
     },
