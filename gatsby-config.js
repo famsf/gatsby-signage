@@ -3,6 +3,7 @@ module.exports = {
     title: `de Young Museum Digital Signage`,
     description: `Front-end site powering the de Young's digital signage.`,
     author: `Andrew Fox`,
+    siteUrl: 'https://famsf-signage.netlify.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
