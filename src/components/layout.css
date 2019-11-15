@@ -16,6 +16,8 @@ html.wf-inactive {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #000;
 }
 article,
 aside,
