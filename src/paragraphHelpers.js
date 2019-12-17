@@ -7,7 +7,7 @@ import { descriptionparagraph } from "./components/descriptionparagraph"
 const components = {
     paragraph__admission_type: admissionparagraph,
     paragraph__signage_image: imageparagraph,
-    paragraph__description: descriptionparagraph
+    paragraph__description: descriptionparagraph,
 };
 
 export const getParagraph = node => {
